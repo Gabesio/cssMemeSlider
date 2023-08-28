@@ -12,6 +12,7 @@ const dot1 = document.querySelector('.d1');
 const dot2 = document.querySelector('.d2');
 const dot3 = document.querySelector('.d3');
 const dot4 = document.querySelector('.d4');
+const dots = document.querySelectorAll('.dot');
 
 const pag1 = document.querySelector('.p1');
 const pag2 = document.querySelector('.p2');
@@ -23,21 +24,25 @@ items.forEach((item) => {
 })
 
 pag1.addEventListener('click', function() {
+    dots.forEach(a => a.classList.remove('active'));
     dot1.classList.toggle('active');
     track.style.transform = `translateX(0rem)`;
 })
 
 pag2.addEventListener('click', function() {
+    dots.forEach(a => a.classList.remove('active'));
     dot2.classList.toggle('active');
     track.style.transform = `translateX(-34.4rem)`;
 })
 
 pag3.addEventListener('click', function() {
+    dots.forEach(a => a.classList.remove('active'));
     dot3.classList.toggle('active');
     track.style.transform = `translateX(-68.8rem)`;
 })
 
 pag4.addEventListener('click', function() {
+    dots.forEach(a => a.classList.remove('active'));
     dot4.classList.toggle('active');
     track.style.transform = `translateX(-103.1rem)`;
 })
