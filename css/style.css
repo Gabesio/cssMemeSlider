@@ -8,18 +8,95 @@ html {
   }
 
 body {
-    background-color: rgb(186, 168, 213);
+    background-color: rgb(255, 255, 255);
     margin: 0;
     font-family: 'Poppins', sans-serif;
+}
+
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50rem;
+    height: 41.875rem;
+    /*background-color: rgb(49, 32, 62);*/
+    padding-top: 3.125rem;
+    animation: fade-up 0.6s;
+    z-index: 2;
+    box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0%;
+    border: solid 3px black;
+    flex-shrink: 2;
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes fade-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
 }
 
 .wrapper {
     width: 100%;
     height: 100vh;
-    background-color: rgb(128, 165, 197);
+    background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.rs {
+    width: 100px;
+    height: 45px;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    animation: fade-down 0.6s 0.4s backwards;
+    display: none;
+}
+
+.info {
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    background-color: rgb(255, 255, 255);
+    border: solid 3px black;
+    border-radius: 5000px;
+    padding: 10px 20px;
+    animation: fade-down 0.6s 0.4s backwards;
+    transition: all .3s;
+    box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+    flex-shrink: 2;
+}
+
+.info:hover {
+    transform: scale(1.15);
+}
+
+.info a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.375rem;
+    flex-shrink: 2;
 }
 
 .slider_container {
@@ -28,29 +105,56 @@ body {
     align-items: center;
     flex-direction: column;
     width: 34.375rem;
-    height: 37.5rem;
-    background-color: rgb(80, 74, 98);
+    height: 41.875rem;
     gap: 1.25rem;
     overflow: hidden;
+    z-index: 2;
+    flex-shrink: 2;
 }
 
 .slider_track {
-    height: 25rem;
+    height: 33rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     /*gap: 3.125rem;*/
     margin-left: 103rem;
-    transition: .2s;
+    transition: all .3s ease-in-out;
+    flex-shrink: 2;
 }
 
 .slider_item {
     width: 34.375rem;
-    height: 25rem;
+    height: 33rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    flex-shrink: 4;
+}
+
+.item_wrapper {
+    border: solid 3px black;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-shrink: 2;
+    /*box-shadow: 10px 3px 10px rgba(0, 0, 0, 0.2);*/
+}
+
+.text {
+    margin-top: 1.25rem;
+    color: #000000;
+    font-size: 1.375rem;
+    letter-spacing: 1px;
+    flex-shrink: 2;
+}
+
+.img {
+    flex-shrink: 2;
 }
 
 .img1 {
@@ -96,8 +200,9 @@ body {
     align-items: center;
     width: 10.625rem;
     height: 4.375rem;
-    background-color: rgb(255, 255, 255);
     gap: 0.3rem;
+    margin-top: 0.625rem;
+    flex-shrink: 2;
 }
 
 .pagination {
@@ -106,22 +211,33 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 2;
 }
 
 .dot {
     width: 1.2rem;
     height: 1.2rem;
     border-radius: 50%;
-    background-color: rgb(32, 28, 45);
+    background-color: rgb(0, 0, 0);
+    border: solid 3px black;
+    flex-shrink: 2;
 }
 
 .hover {
-    background-color: rgb(93, 86, 132);
-    width: 1.4rem;
-    height: 1.4rem;
+    /*background-color: rgb(73, 73, 73);
+    border: rgb(93, 93, 93);*/
+    width: 1.7rem;
+    height: 1.7rem;
     transition: all .3s;
   }
 
 .active {
-    background-color: #939393;
+    background-color: white;
   }
+
+@media (max-width: 560px) {
+    .slider_item {
+        width: 26rem;
+        height: 25rem;
+    }
+}
