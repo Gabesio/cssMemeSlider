@@ -55,12 +55,20 @@ body {
     height: 41.875rem;
     /*background-color: rgb(49, 32, 62);*/
     padding-top: 3.125rem;
-    animation: fade-up 0.6s;
+    /*animation: fade-up 0.6s;*/
     z-index: 2;
     box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.2);
     border-radius: 0%;
     border: solid 2px rgb(0, 0, 0);
     flex-shrink: 6;
+    padding-bottom: 50px;
+}
+
+.mid {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .rs {
@@ -108,27 +116,25 @@ body {
     gap: 1.25rem;
     overflow: hidden;
     z-index: 2;
-    flex-shrink: 2;
 }
 
 .slider_track {
-    height: 33rem;
+    width: 400%;
+    height: 100%;
     display: flex;
     align-items: center;
     /*gap: 3.125rem;*/
     /*margin-left: 103rem;*/
-    transition: all .3s ease-in-out;
-    flex-shrink: 2;
+    transition: all .3s ease;
 }
 
 .slider_item {
-    max-width: 42rem;
-    height: 32rem;
+    width: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    flex-shrink: 4;
+    transition: all .4s ease;
 }
 
 .item_wrapper {
@@ -192,7 +198,7 @@ body {
 
 .pagination_wrapper {
     position: absolute;
-    bottom: 8%;
+    bottom: 15px;
     left: 50%;
     transform: translate(-50%);
     display: flex;
@@ -216,80 +222,63 @@ body {
 }
 
 .dot {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1rem;
+    height: 1rem;
     border-radius: 50%;
-    background-color: rgb(0, 0, 0);
+    /*background-color: rgb(255, 255, 255);*/
     border: solid 2px rgb(0, 0, 0);
-    flex-shrink: 2;
+    cursor: pointer;
+    transition: all .2s ease;
 }
 
-.hover {
-    /*background-color: rgb(73, 73, 73);
-    border: rgb(93, 93, 93);*/
-    width: 1.7rem;
-    height: 1.7rem;
-    cursor: pointer;
-    transition: all .3s
+.dot:hover {
+    transform: scale(1.25);
   }
 
-.active {
-    background-color: white;
-  }
+input[name="r"] {
+    position: absolute;
+    visibility: hidden;
+}
 
+
+#r1:checked ~ .s1 {
+    margin-left: 0;
+}
+
+#r2:checked ~ .s1 {
+    margin-left: -25%;
+}
+
+#r3:checked ~ .s1 {
+    margin-left: -50%;
+}
+
+#r4:checked ~ .s1 {
+    margin-left: -75%;
+}
+
+/* labels */
+
+#r1:checked ~ .pagination_wrapper .d1 {
+    background-color: rgb(0, 0, 0);
+    transform: scale(1.6);
+}
+
+#r2:checked ~ .pagination_wrapper .d2 {
+    background-color: rgb(0, 0, 0);
+    transform: scale(1.6);
+}
+
+#r3:checked ~ .pagination_wrapper .d3 {
+    background-color: rgb(0, 0, 0);
+    transform: scale(1.6);
+}
+
+#r4:checked ~ .pagination_wrapper .d4 {
+    background-color: rgb(0, 0, 0);
+    transform: scale(1.6);
+}
+
+/*
 @media (max-width: 560px) {
-    .block {
-        /*width: 31.25rem;*/
-    }
-
-    .text {
-        font-size: 0.8rem;
-    }
-
-    .img1 {
-        width: 35vw;
-        height: 40vh;
-    }
-
-    .img2 {
-        width: 45vw;
-        height: 40vh;
-    }
-
-    .img3 {
-        width: 35vw;
-        height: 40vh;
-    }
-
-    .img4 {
-        width: 55vw;
-        height: 40vh;
-    }
-
-    .pagination_wrapper {
-        width: 15vw;
-        height: 7vh;
-        gap: 0.4rem;
-    }
-
-    .dot {
-        width: 0.8rem;
-        height: 0.8rem;
-    }
-
-    .block {
-        height: 60vh;
-    }
-
-    .slider_track {
-        height: 35vh;
-    }
-
-    .slider_container {
-        height: 50vh;
-    }
-
-    .item_wrapper {
-        height: 35vh;
-    }
 }
