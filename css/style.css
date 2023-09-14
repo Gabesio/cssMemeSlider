@@ -40,7 +40,7 @@ body {
 .wrapper {
     width: 100%;
     height: 100vh;
-    background-color: rgb(114, 111, 137);
+    background-color: #F3F3F3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,30 +57,13 @@ body {
     padding-top: 3.125rem;
     animation: fade-up 0.6s;
     z-index: 2;
-    box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.4);
-    border-radius: 0%;
-    background-color: #20202d;
+    box-shadow: 5px 3px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    background-color: #141414;
     /*border: solid 2px rgb(0, 0, 0);*/
     flex-shrink: 6;
     padding-bottom: 50px;
     transition: animation 0.6s;
-}
-/*
-.mid {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
-}*/
-
-.rs {
-    width: 100px;
-    height: 45px;
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    animation: fade-down 0.6s 0.4s backwards;
-    display: none;
 }
 
 .info {
@@ -89,12 +72,12 @@ body {
     right: 2.5rem;
     background-color: rgb(255, 255, 255);
     /*border: solid 2px rgb(138, 125, 148);*/
-    background-color: #20202d;
+    background-color: #141414;
     border-radius: 5000px;
     padding: 10px 20px;
     animation: fade-down 0.6s 0.4s backwards;
     transition: all .3s;
-    box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.5);
     z-index: 5;
     flex-shrink: 2;
 }
@@ -104,7 +87,7 @@ body {
 }
 
 .info a {
-    color: rgb(255, 255, 255);
+    color: #F3F3F3;
     text-decoration: none;
     font-size: 1.375rem;
     flex-shrink: 2;
@@ -143,19 +126,20 @@ body {
 
 .item_wrapper {
     /*border: solid 2px rgb(0, 0, 0);*/
-    background-color: #4d4d61;
+    background-color: #F3F3F3;
     height: 30rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     flex-shrink: 2;
+    border-radius: 5px;
     /*box-shadow: 10px 3px 10px rgba(0, 0, 0, 0.2);*/
 }
 
 .text {
     margin-top: 1.25rem;
-    color: #ffffff;
+    color: #141414;
     font-size: 1.375rem;
     letter-spacing: 1px;
     flex-shrink: 2;
@@ -225,8 +209,8 @@ body {
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
-    background-color: rgb(255, 255, 255);
-    border: solid 2px rgb(255, 255, 255);
+    background-color: #F3F3F3;
+    border: solid 2px #F3F3F3;
     cursor: pointer;
     transition: all .2s ease;
 }
@@ -237,8 +221,7 @@ body {
   }
 
 input[name="r"] {
-    position: absolute;
-    visibility: hidden;
+    display: none;
 }
 
 
@@ -261,19 +244,19 @@ input[name="r"] {
 /* labels */
 
 #r1:checked ~ .pagination_wrapper .d1 {
-    background-color: #20202d;
+    background-color: #141414;
 }
 
 #r2:checked ~ .pagination_wrapper .d2 {
-    background-color: #20202d;
+    background-color: #141414;
 }
 
 #r3:checked ~ .pagination_wrapper .d3 {
-    background-color: #20202d;
+    background-color: #141414;
 }
 
 #r4:checked ~ .pagination_wrapper .d4 {
-    background-color: #20202d;
+    background-color: #141414;
 }
 
 
